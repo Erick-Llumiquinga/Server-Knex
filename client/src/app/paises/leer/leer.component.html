@@ -1,0 +1,11 @@
+<div>
+    <table>
+        <tr *ngFor="let titulo of titulos; let i=index">
+            <th>{{titulo}}</th>
+        </tr>
+        <tr *ngFor="let etnia of datos; let i = index">
+            <th>{{i+1}}</th>
+            <th>{{etnia.descripcion}}</th>
+        </tr>
+    </table>
+</div>

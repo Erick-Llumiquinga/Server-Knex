@@ -1,0 +1,21 @@
+<div class="container">
+  <form action="">
+      <div>
+          <label>Descripcion</label>
+          <input type="text" [(ngModel)]="descripcion" name="descripcion">
+        </div>
+        <div>
+          <label>idEstadosRegistros</label>
+          <input type="text"[(ngModel)]="estadoRegistros" name="estadoRegistros" disabled>
+        </div>
+        <div>
+          <label>idCredenciales_ingreso</label>
+          <input type="text"[(ngModel)]="credencialesIngresos" name="credencialesIngresos" disabled>
+        </div>
+        <br>
+        <div>
+          <button class="button" (click)="postEtnias()">Guardar</button>
+        </div>
+  </form>
+</div>
+

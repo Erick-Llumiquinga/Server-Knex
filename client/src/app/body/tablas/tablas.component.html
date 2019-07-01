@@ -1,0 +1,27 @@
+<div class="row">
+  <table>
+    <thead>
+      <th><strong>N°</strong></th>
+      <th *ngFor="let campo of campos">
+        <strong>{{campo | uppercase}}</strong>
+      </th>
+      <th><strong>Acciones</strong></th>
+      <th><button type="button" (click)="editar()" *ngIf="!status"></button></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of datos; let i = index">
+        <td>{{ i + 1}}</td>
+        <td *ngFor="let campo of campos"><input type="text" value="{{dato[campo]}}" [disabled]="id != datoUnitario"></td>
+        <td><button type="button" (ngModel)="datoUnitario" value="{{dato['id']}}" (click)="activarEditado()">Editar</button></td>
+        <td><button type="button" (ngModel)="datoUnitario" value="{{dato['id']}}" (click)="eliminarDatos()">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<select [(ngModel)]="tablaSeleccionada" (change)="leerDatos()">
+  <option   value=999>Seleccione Table</option>
+  <option *ngFor= "let tabla of tablas; let i = index" value={{i}}>
+    {{tabla}}
+  </option>
+</select>
